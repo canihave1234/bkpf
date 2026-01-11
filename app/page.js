@@ -148,12 +148,12 @@ export default function Home() {
     text-left
   ">
     {/* 핵심 한 줄 */}
-<p className="text-2xl text-gray-900 leading-relaxed">
+<p className="text-2xl text-gray-900 leading-relaxed text-center">
   I have{" "}
   <span className="font-semibold text-rose-600">2+ years</span>{" "}
-  of communication experience and{" "}
+  of communication experience <br/> and{" "}
   <span className="font-semibold text-rose-600">1 year</span>{" "}
-  of development experience, combining strong collaboration skills
+  of development experience,  <br/> combining strong collaboration skills 
   with clean, practical code.
 </p>
 
@@ -347,7 +347,7 @@ An online coding and bootcamp platform, focusing on frontend development, layout
 
   {/* ===== Button 영역 (프리뷰 절대 안 뜸) ===== */}
   <a
-    href=""
+    href="https://bkjeon.vercel.app/"
     target="_blank"
     rel="noopener noreferrer"
     className="inline-block px-2 text-rose-600 hover:underline"
