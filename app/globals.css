@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* ===== Base Typography ===== */
+body {
+  font-size: 17px;
+  line-height: 1.75;
+  color: #111827;
+}
+
+/* Hero Title */
+h1 {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+/* Section Titles (About, Projects, Skills) */
+h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* Subsection Titles */
+h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Paragraphs */
+p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* Buttons / Pills */
+a,
+button,
+span {
+  font-weight: 500;
+}
+
+/* subtle noise texture */
+.noise-bg {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+}
+
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* ===== Base Typography ===== */
+body {
+  font-size: 17px;
+  line-height: 1.75;
+  color: #111827;
+}
+
+/* Hero Title */
+h1 {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+/* Section Titles (About, Projects, Skills) */
+h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* Subsection Titles */
+h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Paragraphs */
+p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* Buttons / Pills */
+a,
+button,
+span {
+  font-weight: 500;
+}
+
+/* subtle noise texture */
+.noise-bg {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+}
+
+#aboutme p {
+  font-size: 1.5rem;
+  
+}
