@@ -1,27 +1,22 @@
-import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
 import "./globals.css";
+import { Fraunces, Epilogue } from "next/font/google";
+import type { ReactNode } from "react";
 
-const poppins = Poppins({
+/* ===== Fonts ===== */
+const fraunces = Fraunces({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  display: "swap",
+  variable: "--font-fraunces",
 });
 
-export const metadata: Metadata = {
-  title: "Byungwook Jeon"
-};
+const epilogue = Epilogue({
+  subsets: ["latin"],
+  variable: "--font-epilogue",
+});
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <body className={poppins.className}>
-        {children}
-      </body>
+    <html lang="en" className={`${fraunces.variable} ${epilogue.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }

@@ -1,136 +1,170 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #fafafa;
+
+  /* Deep navy system */
+  --text: #1f2a44;
+  --muted: #5f6b85;
+
+  --accent: #5b6cff;
+  --accent-soft: rgba(79, 70, 229, 0.14);
+
+  --font-heading: var(--font-fraunces);
+  --font-body: var(--font-epilogue);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ===== Base ===== */
+html, body {
+  padding: 0;
+  margin: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-/* ===== Base Typography ===== */
 body {
+  background:
+    radial-gradient(
+      circle at top left,
+      var(--accent-soft),
+      transparent 60%
+    ),
+    var(--bg);
+  color: var(--text);
+  font-family: var(--font-body), system-ui, sans-serif;
   font-size: 17px;
   line-height: 1.75;
-  color: #111827;
 }
 
-/* Hero Title */
-h1 {
-  font-size: clamp(3rem, 6vw, 4.5rem);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-}
-
-/* Section Titles (About, Projects, Skills) */
-h2 {
-  font-size: 2.2rem;
-  font-weight: 600;
+/* Menu font (force Fraunces) */
+.menu-font {
+  font-family: var(--font-fraunces), serif;
   letter-spacing: -0.02em;
 }
 
-/* Subsection Titles */
-h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
+/* ===== Typography ===== */
+h1, h2, h3 {
+  font-family: var(--font-fraunces), serif;
+  letter-spacing: -0.025em;
 }
 
-/* Paragraphs */
-p {
-  font-size: 1.05rem;
-  line-height: 1.8;
-}
-
-/* Buttons / Pills */
-a,
-button,
-span {
-  font-weight: 500;
-}
-
-/* subtle noise texture */
-.noise-bg {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
-}
-
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-/* ===== Base Typography ===== */
-body {
-  font-size: 17px;
-  line-height: 1.75;
-  color: #111827;
-}
-
-/* Hero Title */
 h1 {
   font-size: clamp(3rem, 6vw, 4.5rem);
   font-weight: 700;
-  letter-spacing: -0.03em;
 }
 
-/* Section Titles (About, Projects, Skills) */
-h2 {
-  font-size: 2.2rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-}
 
-/* Subsection Titles */
-h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
-}
-
-/* Paragraphs */
 p {
-  font-size: 1.05rem;
-  line-height: 1.8;
+  color: var(--muted);
 }
 
-/* Buttons / Pills */
-a,
-button,
-span {
+/* ===== Links ===== */
+a {
+  color: var(--text);
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+/* subtle easing everywhere */
+* {
+  transition: color 0.2s ease, background-color 0.2s ease,
+              transform 0.2s ease, opacity 0.2s ease;
+}
+/* ===== Section System ===== */
+
+
+.section {
+  scroll-margin-top: 120px; 
+}
+
+.section-inner {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding-top: 4.5rem;   
+  padding-bottom: 7.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 5vw, 3.8rem);
+  font-weight: 650;
+  letter-spacing: -0.025em;
+  margin-bottom: 2.5rem; 
+}
+
+.section-body {
+  max-width: 48rem;
+}
+
+
+
+
+.tech-stack {
+  color: var(--accent);
+
+}
+
+/* ===== Organic Background ===== */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -20%;
+  z-index: -1;
+  background:
+    radial-gradient(
+      45% 45% at 15% 15%,
+      rgba(79, 70, 229, 0.22),
+      transparent 60%
+    ),
+    radial-gradient(
+      40% 40% at 85% 20%,
+      rgba(16, 185, 129, 0.22),
+      transparent 60%
+    ),
+    radial-gradient(
+      55% 55% at 50% 90%,
+      rgba(244, 114, 182, 0.22),
+      transparent 60%
+    );
+  filter: blur(80px) saturate(120%);
+}
+
+
+/* subtle grain */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+
+
+.button-primary {
+  background: var(--accent);
+  color: white;
+  border-radius: 999px;
+  padding: 0.75rem 2rem;
   font-weight: 500;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-/* subtle noise texture */
-.noise-bg {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+.button-primary:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
 }
 
-#aboutme p {
-  font-size: 1.5rem;
-  
+@keyframes drift {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(-2%, 1%); }
+  100% { transform: translate(0, 0); }
+}
+
+body::before {
+  animation: drift 60s ease-in-out infinite;
 }
