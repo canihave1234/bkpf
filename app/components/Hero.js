@@ -20,12 +20,10 @@ export default function Hero() {
     </h1>
 
 
-      <p className="mt-6 text-xl  max-w-3xl whitespace-nowrap md:whitespace-normal">
+<p className="mt-6 text-xl max-w-3xl whitespace-normal md:whitespace-nowrap">
+  Developer with 1.5+ years delivering solutions through strong communication.
+</p>
 
-       
-      
-     Developer with 1.5+ years delivering solutions through strong communication.
-      </p>
 
 
      
